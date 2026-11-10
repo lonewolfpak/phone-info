@@ -1,11 +1,14 @@
+
 #!/usr/bin/env python3
 """
-phone_info.py — basic phone number OSINT.
-Usage: python3 phone_info.py <number_with_country_code>
+Phone Info OSINT Tool
+=====================
+A fast, offline CLI utility for basic phone number intelligence.
 
-Examples:
-  python3 phone_info.py +14155551234
-  python3 phone_info.py +442083661177
+Author:  Lone Wolf
+GitHub:  https://github.com/lonewolfpak
+License: MIT
+Version: 1.0.0
 """
 
 import sys
@@ -29,8 +32,26 @@ def describe_type(num_obj):
         PhoneNumberType.UNKNOWN: "unknown",
     }
     return mapping.get(t, f"type {t}")
-
 def main():
+    if len(sys.argv) < 2:
+        print("usage: python phone_info.py <number_with_country_code> [--truecaller <installation_id>]")
+        sys.exit(1)
+
+    print("\033[94m" + r"""
+    ██╗      ██████╗ ███╗   ██╗███████╗    ██╗    ██╗ ██████╗ ██╗     ███████╗
+    ██║     ██╔═══██╗████╗  ██║██╔════╝    ██║    ██║██╔═══██╗██║     ██╔════╝
+    ██║     ██║   ██║██╔██╗ ██║█████╗      ██║ █╗ ██║██║   ██║██║     █████╗  
+    ██║     ██║   ██║██║╚██╗██║██╔══╝      ██║███╗██║██║   ██║██║     ██╔══╝  
+    ███████╗╚██████╔╝██║ ╚████║███████╗    ╚███╔███╔╝╚██████╔╝███████╗██║     
+    ╚══════╝ ╚═════╝ ╚═╝  ╚═══╝╚══════╝     ╚══╝╚══╝  ╚═════╝ ╚══════╝╚═╝     
+    """ + "\033[0m")
+    print("  [+] Tool: Phone OSINT")
+    print("  [+] Author: Lone Wolf (Pakistani Ethical hacker")
+    print("  [+] WhatsApp:https://chat.whatsapp.com/CaeXTwxd1081ZuHAZSUAvW?s=cl&p=a&iam=2")
+    print("  [+] GitHub: https://github.com/lonewolfpak")
+    print("-" * 44)
+
+    # ... the rest of your main() code goes here ...
     if len(sys.argv) < 2:
         print("usage: python3 phone_info.py <number_with_country_code>")
         print("example: python3 phone_info.py +14155551234")
